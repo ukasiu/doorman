@@ -21,9 +21,9 @@ if (conf.modules.github) {
   var github = require('./lib/modules/github');
   github.setup(everyauth);
 }
-if (conf.modules.google) {
-  var google = require('./lib/modules/google');
-  google.setup(everyauth);
+if (conf.modules.accounts) {
+  var accounts = require('./lib/modules/accounts');
+  accounts.setup(everyauth);
 }
 if(conf.modules.password) {
   var password = require('./lib/modules/password');
