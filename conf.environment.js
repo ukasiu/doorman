@@ -70,21 +70,11 @@ if(modules.indexOf('password') >= 0) {
   };
 }
 
-if(modules.indexOf('google') >= 0) {
-  // Register a new oauth app on Google Apps at
-  // https://code.google.com/apis/console
-  conf.modules.google = {
-    appId: process.env.DOORMAN_GOOGLE_APPID,
-    appSecret: process.env.DOORMAN_GOOGLE_APPSECRET,
+if(modules.indexOf('accounts') >= 0) {
 
-    // If uncommented, user must authenticate with an account associated with one of
-    // the emails in the comma-separated list.
-    // example: DOORMAN_GOOGLE_REQUIRED_EMAIL="user1@gmail.com,user2@gmail.com"
-    requiredEmail: process.env.DOORMAN_GOOGLE_REQUIRED_EMAIL && process.env.DOORMAN_GOOGLE_REQUIRED_EMAIL.split(','),
-
-    // User must be a member of this domain to successfully authenticate. If an array
-    // is listed, user may authenticate as a member of ANY of the domains.
-    requiredDomain: process.env.DOORMAN_GOOGLE_REQUIRED_DOMAIN
+  conf.modules.accounts = {
+    appId: process.env.DOORMAN_ACCOUNTS_APPID,
+    appSecret: process.env.DOORMAN_ACCOUNTS_APPSECRET,
   };
 }
 
